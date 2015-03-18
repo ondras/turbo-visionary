@@ -32,7 +32,7 @@ White	  |255, 255, 255 | #ffffff
 
 ## Font(s)
 
-  - Wikiepedia info: http://en.wikipedia.org/wiki/Code_page_437
+  - Wikipedia info: http://en.wikipedia.org/wiki/Code_page_437
   - Font explainer: http://laemeur.sdf.org/fonts/
   - TTF: http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf
 
