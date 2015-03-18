@@ -21,14 +21,14 @@ Gray          | 170, 170, 170 | #aaaaaa
 
 name          | RGB | Hex
 --------------|-----|----
-Darkgray|	85, 85, 85 |
-Red     |	255, 85, 85 |
-Green	  |85, 255, 85 |
-Yellow	|255, 255, 85 |
-Blue	  |85, 85, 255 |
-Magenta	|255, 85, 255 |
-Cyan	  |85, 255, 255 |
-White	  |255, 255, 255 |
+Darkgray|	85, 85, 85 | #555555
+Red     |	255, 85, 85 | #ff5555
+Green	  |85, 255, 85 | #55ff55
+Yellow	|255, 255, 85 | #ffff55
+Blue	  |85, 85, 255 | #5555ff
+Magenta	|255, 85, 255 | #ff55ff
+Cyan	  |85, 255, 255 | #55ffff
+White	  |255, 255, 255 | #ffffff
 
 ## Font(s)
 
