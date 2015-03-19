@@ -1,0 +1,114 @@
+@black: #000;
+@red-bg: #a00;
+@green-bg: #0a0;
+@brown-bg: #a50;
+@blue-bg: #00a;
+@magenta-bg: #a0a;
+@cyan-bg: #0aa;
+@gray-bg: #aaa;
+
+@gray-fg: #555;
+@red-fg: #f55;
+@green-fg: #5f5;
+@yellow-fg: #ff5;
+@blue-fg: #55f;
+@magenta-fg: #f5f;
+@cyan-fg: #5ff;
+@white: #fff;
+
+@font-face {
+	font-family: DOSVGA;
+	src: url("../resources/MorePerfectDOSVGA.ttf");
+}
+
+.mx-shadow {
+	box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+}
+
+
+body {
+	margin: 0;
+	font-family: DOSVGA;
+	font-size: 16px;
+	line-height: 1;
+
+	color: @white;
+	background-image: url(../resources/bg.png);
+}
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		color: @black;
+		background-color: @gray-bg;
+		cursor: default !important;
+
+		li {
+			position: relative;
+			cursor: pointer;
+			padding: 0 1ch;
+			white-space: nowrap;
+
+			&:empty {
+				height: 1em;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: -0.5ch;
+					right: -0.5ch;
+					top: 0.5em;
+					border-top: 1px solid @black;
+				}
+
+				&:hover {
+					background-color: transparent !important;
+				}
+			}
+
+			&::first-letter {
+				color: @red-bg;
+			}
+		}
+	}
+
+	& > ul {
+		height: 1em;
+
+		ul {
+			position: absolute;
+			top: 1em;
+			left: 0;
+			display: none;
+			padding: 1em 2ch;
+			.mx-shadow;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 1.37ch;
+				top: 0.44em;
+				right: 1.37ch;
+				bottom: 0.44em;
+				border-color: @black;
+				border-style: solid;
+				border-width: 1px 2px;
+			}
+		}
+
+		& > li {
+			float: left;
+		}
+	}
+
+
+
+	li:hover {
+		background-color: @green-bg;
+		& > ul {
+			display: block;
+		}
+	}
+}

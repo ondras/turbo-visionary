@@ -1,0 +1,77 @@
+@font-face {
+  font-family: DOSVGA;
+  src: url("../resources/MorePerfectDOSVGA.ttf");
+}
+.mx-shadow {
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+}
+body {
+  margin: 0;
+  font-family: DOSVGA;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  background-image: url(../resources/bg.png);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #000000;
+  background-color: #aaaaaa;
+  cursor: default !important;
+}
+nav ul li {
+  position: relative;
+  cursor: pointer;
+  padding: 0 1ch;
+  white-space: nowrap;
+}
+nav ul li:empty {
+  height: 1em;
+}
+nav ul li:empty::before {
+  content: "";
+  position: absolute;
+  left: -0.5ch;
+  right: -0.5ch;
+  top: 0.5em;
+  border-top: 1px solid #000000;
+}
+nav ul li:empty:hover {
+  background-color: transparent !important;
+}
+nav ul li::first-letter {
+  color: #aa0000;
+}
+nav > ul {
+  height: 1em;
+}
+nav > ul ul {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  display: none;
+  padding: 1em 2ch;
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+}
+nav > ul ul::before {
+  content: "";
+  position: absolute;
+  left: 1.37ch;
+  top: 0.44em;
+  right: 1.37ch;
+  bottom: 0.44em;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px 2px;
+}
+nav > ul > li {
+  float: left;
+}
+nav li:hover {
+  background-color: #00aa00;
+}
+nav li:hover > ul {
+  display: block;
+}
