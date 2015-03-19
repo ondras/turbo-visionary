@@ -5,13 +5,35 @@
 .mx-shadow {
   box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
 }
+.mx-border {
+  content: "";
+  position: absolute;
+  left: 0.37ch;
+  right: 0.37ch;
+  top: 0.4em;
+  bottom: 0.4em;
+  border-color: #ffffff;
+  border-style: double;
+  border-width: 3px 5px;
+}
 body {
   margin: 0;
-  font-family: DOSVGA;
-  font-size: 16px;
-  line-height: 1;
   color: #ffffff;
   background-image: url(../resources/bg.png);
+}
+em {
+  color: #ffff55;
+  font-style: normal;
+}
+* {
+  font-family: DOSVGA;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: normal !important;
+}
+nav {
+  position: relative;
+  z-index: 1;
 }
 nav ul {
   margin: 0;
@@ -41,7 +63,7 @@ nav ul li:empty::before {
 nav ul li:empty:hover {
   background-color: transparent !important;
 }
-nav ul li::first-letter {
+nav ul li em {
   color: #aa0000;
 }
 nav > ul {
@@ -74,4 +96,132 @@ nav li:hover {
 }
 nav li:hover > ul {
   display: block;
+}
+label,
+input,
+button {
+  cursor: pointer;
+}
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+input[type=radio] + label {
+  white-space: pre;
+  background-color: #00aaaa;
+  padding: 0 1ch;
+}
+input[type=radio] + label::before {
+  content: "( )";
+  margin-right: 1ch;
+}
+input[type=radio]:checked + label::before {
+  content: "(•)";
+}
+input[type=radio]:focus + label {
+  color: #ffffff;
+}
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+input[type=checkbox] + label {
+  white-space: pre;
+  background-color: #00aaaa;
+  padding: 0 1ch;
+}
+input[type=checkbox] + label::before {
+  content: "[ ]";
+  margin-right: 1ch;
+}
+input[type=checkbox]:checked + label::before {
+  content: "[X]";
+}
+input[type=checkbox]:focus + label {
+  color: #ffffff;
+}
+input[type=button],
+button {
+  border: none;
+  margin: 0;
+  padding: 0 1ch;
+  min-width: 8ch;
+  color: #000000;
+  box-shadow: 1ch 0.5em 0 #000000;
+  background-color: #00aa00;
+}
+input[type=button]:focus,
+button:focus {
+  color: #ffffff;
+}
+input[type=text],
+input[type=password] {
+  border: none;
+  margin: 0;
+  padding: 0 1ch;
+  background-color: #0000aa;
+  color: #ffffff;
+}
+.window {
+  box-sizing: border-box;
+  position: relative;
+  background-color: #0000aa;
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+  padding: 1em 1ch;
+}
+.window > * {
+  position: relative;
+}
+.window::before {
+  content: "";
+  position: absolute;
+  left: 0.37ch;
+  right: 0.37ch;
+  top: 0.4em;
+  bottom: 0.4em;
+  border-color: #ffffff;
+  border-style: double;
+  border-width: 3px 5px;
+}
+.window > h2:first-child {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0;
+  padding: 0 1ch;
+  transform: translate(-50%, 0);
+  background-color: #0000aa;
+  color: #ffffff;
+}
+.window.form {
+  color: #000000;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #aaaaaa;
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+  padding: 1em 1ch;
+}
+.window.form > * {
+  position: relative;
+}
+.window.form::before {
+  content: "";
+  position: absolute;
+  left: 0.37ch;
+  right: 0.37ch;
+  top: 0.4em;
+  bottom: 0.4em;
+  border-color: #ffffff;
+  border-style: double;
+  border-width: 3px 5px;
+}
+.window.form > h2:first-child {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0;
+  padding: 0 1ch;
+  transform: translate(-50%, 0);
+  background-color: #aaaaaa;
+  color: #ffffff;
 }

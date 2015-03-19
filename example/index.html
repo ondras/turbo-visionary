@@ -8,36 +8,74 @@
 		<nav>
 			<ul>
 				<li>
-					File
+					<em>F</em>ile
 					<ul>
-						<li>New</li>
-						<li>Open</li>
-						<li>Save</li>
+						<li><em>N</em>ew</li>
+						<li><em>O</em>pen</li>
+						<li><em>S</em>ave</li>
 						<li></li>
-						<li>Exit</li>
+						<li>E<em>x</em>it</li>
 					</ul>
 				</li>
-				<li>Edit
+				<li><em>E</em>dit
 					<ul>
-						<li>Copy</li>
+						<li>Cu<em>t</em></li>
+						<li><em>C</em>opy</li>
 						<li></li>
-						<li>Paste &#x25BA;
+						<li><em>P</em>aste &#x25BA;
 							<ul>
-								<li>Normal</li>
-								<li>Special</li>
+								<li><em>N</em>ormal</li>
+								<li><em>S</em>pecial</li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li>Help
+				<li><em>H</em>elp
 					<ul>
-						<li>Contents</li>
-						<li>About</li>
+						<li><em>C</em>ontents</li>
+						<li><em>A</em>bout</li>
 						<li></li>
-						<li>Version</li>
+						<li><em>V</em>ersion</li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
+
+		<p></p>
+
+		<section class="window" style="width:80ch; height:20ch; left:5ch;">
+			<h2>A simple window</h2>
+			<p>Some window content.</p>
+		</section>
+
+		<p><br/></p>
+
+		<section class="window form" style="width:60ch; left:5ch; padding-left: 3ch;">
+			<h2>A simple form</h2>
+
+			<p style="display:inline-block; margin-right: 5ch;">
+				Sex:<br/>
+				<input type="radio" name="sex" value="m" id="sex-m" checked="" /><label for="sex-m"><em>M</em>ale  </label><br/>
+				<input type="radio" name="sex" value="f" id="sex-f" /><label for="sex-f"><em>F</em>emale</label><br/>
+				<input type="radio" name="sex" value="b" id="sex-b" /><label for="sex-b"><em>B</em>oth  </label><br/>
+			</p>
+
+			<p style="display:inline-block;">
+				Hobbies:<br/>
+				<input type="checkbox" id="cb-1" />           <label for="cb-1"><em>G</em>olf              </label><br/>
+				<input type="checkbox" id="cb-2" checked="" /><label for="cb-2"><em>S</em>trangling animals</label><br/>
+				<input type="checkbox" id="cb-3" />           <label for="cb-3"><em>M</em>asturbation      </label><br/>
+			</p>
+
+			<p>
+				<label>Name: <input type="text" /></label>
+			</p>
+
+			<p>
+				<button>O<em>K</em></button>
+				<button>Cancel</button>
+				<button>Help</button>
+			</p>
+		</section>
 	</body>
 </html>

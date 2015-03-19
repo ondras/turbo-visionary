@@ -1,19 +1,19 @@
 @black: #000;
-@red-bg: #a00;
-@green-bg: #0a0;
-@brown-bg: #a50;
-@blue-bg: #00a;
-@magenta-bg: #a0a;
-@cyan-bg: #0aa;
-@gray-bg: #aaa;
+@red-dark: #a00;
+@green-dark: #0a0;
+@brown-dark: #a50;
+@blue-dark: #00a;
+@magenta-dark: #a0a;
+@cyan-dark: #0aa;
+@gray-light: #aaa;
 
-@gray-fg: #555;
-@red-fg: #f55;
-@green-fg: #5f5;
-@yellow-fg: #ff5;
-@blue-fg: #55f;
-@magenta-fg: #f5f;
-@cyan-fg: #5ff;
+@gray-dark: #555;
+@red-light: #f55;
+@green-light: #5f5;
+@yellow-light: #ff5;
+@blue-light: #55f;
+@magenta-light: #f5f;
+@cyan-light: #5ff;
 @white: #fff;
 
 @font-face {
@@ -25,24 +25,97 @@
 	box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
 }
 
+.mx-border {
+	content: "";
+	position: absolute;
+	left: 0.37ch;
+	right: 0.37ch;
+	top: 0.4em;
+	bottom: 0.4em;
+	border-color: @white;
+	border-style: double;
+	border-width: 3px 5px;
+}
+
+.mx-window(@background) {
+	box-sizing: border-box;
+	position: relative;
+	background-color: @background;
+	.mx-shadow;
+	padding: 1em 1ch;
+
+	& > * {
+		position: relative;
+	}
+
+	&::before {
+		.mx-border;
+	}
+
+	& > h2:first-child {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin: 0;
+		padding: 0 1ch;
+		transform: translate(-50%, 0);
+		background-color: @background;
+		color: @white;
+	}
+}
+
+.mx-radio-checkbox(@empty, @full) {
+	position: absolute;
+	opacity: 0;
+
+	& + label {
+		white-space: pre;
+		background-color: @cyan-dark;
+		padding: 0 1ch;
+	}
+
+	& + label::before {
+		content: @empty;
+		margin-right: 1ch;
+	}
+
+	&:checked + label::before {
+		content: @full;
+	}
+
+	&:focus + label {
+		color: @white;
+	}
+}
 
 body {
 	margin: 0;
-	font-family: DOSVGA;
-	font-size: 16px;
-	line-height: 1;
-
 	color: @white;
 	background-image: url(../resources/bg.png);
 }
 
+em {
+	color: @yellow-light;
+	font-style: normal;
+}
+
+* {
+	font-family: DOSVGA;
+	line-height: 1;
+	font-size: 16px;
+	font-weight: normal !important;
+}
+
 nav {
+	position: relative;
+	z-index: 1;
+
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		color: @black;
-		background-color: @gray-bg;
+		background-color: @gray-light;
 		cursor: default !important;
 
 		li {
@@ -68,8 +141,8 @@ nav {
 				}
 			}
 
-			&::first-letter {
-				color: @red-bg;
+			em {
+				color: @red-dark;
 			}
 		}
 	}
@@ -106,9 +179,53 @@ nav {
 
 
 	li:hover {
-		background-color: @green-bg;
+		background-color: @green-dark;
 		& > ul {
 			display: block;
 		}
 	}
 }
+
+label, input, button {
+	cursor: pointer;
+}
+
+input[type=radio] {
+	.mx-radio-checkbox("( )", "(•)")
+}
+
+input[type=checkbox] {
+	.mx-radio-checkbox("[ ]", "[X]")
+}
+
+input[type=button], button {
+	border: none;
+	margin: 0;
+	padding: 0 1ch;
+	min-width: 8ch;
+	color: @black;
+	box-shadow: 1ch 0.5em 0 @black;
+	background-color: @green-dark;
+
+	&:focus {
+		color: @white;
+	}
+}
+
+input[type=text], input[type=password] {
+	border: none;
+	margin: 0;
+	padding: 0 1ch;
+	background-color: @blue-dark;
+	color: @white;
+}
+
+.window {
+	.mx-window(@blue-dark);
+}
+
+.window.form {
+	color: @black;
+	.mx-window(@gray-light);
+}
+
