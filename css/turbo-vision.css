@@ -31,6 +31,9 @@ em {
   font-size: 16px;
   font-weight: normal !important;
 }
+a {
+  text-decoration: none;
+}
 nav {
   position: relative;
   z-index: 1;
@@ -193,6 +196,28 @@ input[type=password] {
   background-color: #0000aa;
   color: #ffffff;
 }
+.window .close {
+  position: absolute;
+  top: 0;
+  background-color: #0000aa;
+}
+.window .close::before {
+  color: #ffffff;
+  content: "[ ]";
+}
+.window .close::after {
+  position: absolute;
+  top: 0;
+  left: 1ch;
+  color: #55ff55;
+  content: "■";
+}
+.window .close.left {
+  left: 2ch;
+}
+.window .close.right {
+  right: 2ch;
+}
 .window.form {
   color: #000000;
   box-sizing: border-box;
@@ -224,4 +249,26 @@ input[type=password] {
   transform: translate(-50%, 0);
   background-color: #aaaaaa;
   color: #ffffff;
+}
+.window.form .close {
+  position: absolute;
+  top: 0;
+  background-color: #aaaaaa;
+}
+.window.form .close::before {
+  color: #ffffff;
+  content: "[ ]";
+}
+.window.form .close::after {
+  position: absolute;
+  top: 0;
+  left: 1ch;
+  color: #55ff55;
+  content: "■";
+}
+.window.form .close.left {
+  left: 2ch;
+}
+.window.form .close.right {
+  right: 2ch;
 }

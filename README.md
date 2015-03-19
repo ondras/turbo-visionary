@@ -34,7 +34,7 @@ White	  |255, 255, 255 | #ffffff
 
   - Wikipedia info: http://en.wikipedia.org/wiki/Code_page_437
   - Font explainer: http://laemeur.sdf.org/fonts/
-  - TTF with correctly remapped bullet and pointers: http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf
+  - TTF with incorrectly mapped bullet and pointers: http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf
 
 ## UI examples
 
