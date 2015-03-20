@@ -36,7 +36,7 @@ White	  |255, 255, 255 | #ffffff
   - Font explainer: http://laemeur.sdf.org/fonts/
   - TTF with incorrectly mapped bullet and pointers: http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf
 
-## Syntax highligt
+## Syntax highlighting
 
   - Background: dark blue
   - Foreground: yellow
