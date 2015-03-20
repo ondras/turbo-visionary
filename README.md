@@ -41,7 +41,7 @@ White	  |255, 255, 255 | #ffffff
   - Background: dark blue #0000aa
   - Foreground: yellow    #ffff55
   - Keywords: white       #ffffff
-  - Comments: dark gray   #555555
+  - Comments: light gray  #aaaaaa
   - Strings: light green  #55ff55
   - Numbers: light cyan   #55ffff
   - Selection background: light gray #aaaaaa
