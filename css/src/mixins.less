@@ -1,0 +1,110 @@
+.mx-shadow {
+	box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+}
+
+.mx-border(@color) {
+	box-sizing: border-box;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		border-color: @color;
+	}
+}
+
+.mx-border-single(@color) {
+	.mx-border(@color);
+	padding: 1em 2ch;
+
+	&::before {
+		left: calc(1.5ch - 1 * @line-width);
+		right: calc(1.5ch - 1 * @line-width);
+		top: calc(0.5em - 0.5 * @line-width);
+		bottom: calc(0.5em - 0.5 * @line-width);
+		border-style: solid;
+		border-width: calc(@line-width) (2*@line-width);
+	}
+}
+
+.mx-border-double(@color) {
+	.mx-border(@color);
+	padding: 1em 1ch;
+
+	&::before {
+		left: calc(0.5ch - 2.5 * @line-width);
+		right: calc(0.5ch - 2.5 * @line-width);
+		top: calc(0.5em - 2 * @line-width);
+		bottom: calc(0.5em - 1 * @line-width);
+		border-style: double;
+		border-width: calc(3 * @line-width) (5 * @line-width);
+	}
+}
+
+.mx-window(@background, @foreground) {
+	.mx-shadow;
+	.mx-border-double(@foreground);
+	background-color: @background;
+
+	& > * {
+		position: relative;
+	}
+
+
+	& > h2:first-child {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin: 0;
+		padding: 0 1ch;
+		transform: translate(-50%, 0);
+		background-color: @background;
+		color: @foreground;
+	}
+
+	.close {
+		position: absolute;
+		top: 0;
+		background-color: @background;
+
+		&::before {
+			color: @foreground;
+			content: "[ ]";
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 1ch;
+			color: @green-light;
+			content: "■";
+		}
+
+		&.left { left: 2ch; }
+		&.right { right: 2ch; }
+	}
+}
+
+.mx-radio-checkbox(@empty, @full) {
+	position: absolute;
+	opacity: 0;
+
+	& + label {
+		white-space: pre;
+		background-color: @cyan-dark;
+		padding: 0 1ch;
+	}
+
+	& + label::before {
+		content: @empty;
+		margin-right: 1ch;
+	}
+
+	&:checked + label::before {
+		content: @full;
+	}
+
+	&:focus + label {
+		color: @white;
+	}
+}

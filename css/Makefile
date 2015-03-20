@@ -1,3 +1,4 @@
 NAME=turbo-vision
-$(NAME).css: $(NAME).less
-	lessc $^ > $@
+
+$(NAME).css: $(wildcard src/*)
+	lessc src/$(NAME).less > $@

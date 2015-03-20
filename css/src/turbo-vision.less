@@ -1,0 +1,54 @@
+@import "variables.less";
+@import "mixins.less";
+@import "nav.less";
+@import "form.less";
+@import "table.less";
+
+@font-face {
+	font-family: DOSVGA;
+	src: url("../resources/MorePerfectDOSVGA.ttf");
+}
+
+* {
+	font-family: DOSVGA;
+	line-height: 1;
+	padding: 0;
+	border: none;
+	font-size: @font-size;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	color: @white;
+	background-image: url(../resources/bg.png);
+	background-size: 1ch 1em;
+}
+
+em {
+	color: @yellow-light;
+}
+
+ol, ul {
+	padding-left: 4ch;
+}
+
+ul > li {
+	list-style: none;
+	text-indent: -2ch;
+
+	&::before {
+		content: "• ";
+	}	
+}
+
+.window {
+	.mx-window(@blue-dark, @white);
+}
+
+.window.form {
+	color: @black;
+	.mx-window(@gray-light, @white);
+}

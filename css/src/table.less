@@ -1,0 +1,24 @@
+table {
+	border-collapse: collapse;
+
+	thead tr:last-child td {
+		padding-bottom: calc(0.5em - @line-width);
+		border-bottom: calc(3 * @line-width) double @white;
+	}
+
+	thead + tbody tr:first-child td {
+		padding-top: calc(0.5em - 2*@line-width);
+	}
+
+	td {
+
+		&:not(:last-child) {
+			padding-right: calc(0.5ch - 1.5 * @line-width);
+		}
+		& + td {
+			padding-left: calc(0.5ch - 0.5 * @line-width);
+			border-left: calc(2 * @line-width) solid @white;
+		}
+	}
+	
+}

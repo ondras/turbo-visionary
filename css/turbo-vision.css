@@ -1,38 +1,5 @@
-@font-face {
-  font-family: DOSVGA;
-  src: url("../resources/MorePerfectDOSVGA.ttf");
-}
 .mx-shadow {
   box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
-}
-.mx-border {
-  content: "";
-  position: absolute;
-  left: 0.37ch;
-  right: 0.37ch;
-  top: 0.4em;
-  bottom: 0.4em;
-  border-color: #ffffff;
-  border-style: double;
-  border-width: 3px 5px;
-}
-body {
-  margin: 0;
-  color: #ffffff;
-  background-image: url(../resources/bg.png);
-}
-em {
-  color: #ffff55;
-  font-style: normal;
-}
-* {
-  font-family: DOSVGA;
-  line-height: 1;
-  font-size: 16px;
-  font-weight: normal !important;
-}
-a {
-  text-decoration: none;
 }
 nav {
   position: relative;
@@ -41,7 +8,6 @@ nav {
 nav ul {
   margin: 0;
   padding: 0;
-  list-style: none;
   color: #000000;
   background-color: #aaaaaa;
   cursor: default !important;
@@ -51,6 +17,10 @@ nav ul li {
   cursor: pointer;
   padding: 0 1ch;
   white-space: nowrap;
+  text-indent: 0;
+}
+nav ul li::before {
+  content: "";
 }
 nav ul li:empty {
   height: 1em;
@@ -60,8 +30,8 @@ nav ul li:empty::before {
   position: absolute;
   left: -0.5ch;
   right: -0.5ch;
-  top: 0.5em;
-  border-top: 1px solid #000000;
+  top: calc(0.4375em);
+  border-top: calc(0.0625em) solid #000000;
 }
 nav ul li:empty:hover {
   background-color: transparent !important;
@@ -73,23 +43,27 @@ nav > ul {
   height: 1em;
 }
 nav > ul ul {
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  position: relative;
+  padding: 1em 2ch;
   position: absolute;
   top: 1em;
   left: 0;
   display: none;
-  padding: 1em 2ch;
-  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
 }
 nav > ul ul::before {
   content: "";
   position: absolute;
-  left: 1.37ch;
-  top: 0.44em;
-  right: 1.37ch;
-  bottom: 0.44em;
   border-color: #000000;
+}
+nav > ul ul::before {
+  left: calc(1.4375ch);
+  right: calc(1.4375ch);
+  top: calc(0.46875em);
+  bottom: calc(0.46875em);
   border-style: solid;
-  border-width: 1px 2px;
+  border-width: calc(0.0625em) 0.125em;
 }
 nav > ul > li {
   float: left;
@@ -145,8 +119,6 @@ input[type=checkbox]:focus + label {
 }
 input[type=button],
 button {
-  border: none;
-  margin: 0;
   padding: 0 1ch;
   min-width: 8ch;
   color: #000000;
@@ -157,34 +129,91 @@ input[type=button]:focus,
 button:focus {
   color: #ffffff;
 }
+input[type=button] + input[type=button],
+input[type=button] + button,
+button + input[type=button],
+button + button {
+  margin-left: 3ch;
+}
 input[type=text],
 input[type=password] {
-  border: none;
-  margin: 0;
   padding: 0 1ch;
   background-color: #0000aa;
   color: #ffffff;
 }
+table {
+  border-collapse: collapse;
+}
+table thead tr:last-child td {
+  padding-bottom: calc(0.4375em);
+  border-bottom: calc(0.1875em) double #ffffff;
+}
+table thead + tbody tr:first-child td {
+  padding-top: calc(0.375em);
+}
+table td:not(:last-child) {
+  padding-right: calc(0.40625ch);
+}
+table td + td {
+  padding-left: calc(0.46875ch);
+  border-left: calc(0.125em) solid #ffffff;
+}
+@font-face {
+  font-family: DOSVGA;
+  src: url("../resources/MorePerfectDOSVGA.ttf");
+}
+* {
+  font-family: DOSVGA;
+  line-height: 1;
+  padding: 0;
+  border: none;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  color: #ffffff;
+  background-image: url(../resources/bg.png);
+  background-size: 1ch 1em;
+}
+em {
+  color: #ffff55;
+}
+ol,
+ul {
+  padding-left: 4ch;
+}
+ul > li {
+  list-style: none;
+  text-indent: -2ch;
+}
+ul > li::before {
+  content: "• ";
+}
 .window {
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
   position: relative;
-  background-color: #0000aa;
-  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
   padding: 1em 1ch;
-}
-.window > * {
-  position: relative;
+  background-color: #0000aa;
 }
 .window::before {
   content: "";
   position: absolute;
-  left: 0.37ch;
-  right: 0.37ch;
-  top: 0.4em;
-  bottom: 0.4em;
   border-color: #ffffff;
+}
+.window::before {
+  left: calc(0.34375ch);
+  right: calc(0.34375ch);
+  top: calc(0.375em);
+  bottom: calc(0.4375em);
   border-style: double;
-  border-width: 3px 5px;
+  border-width: calc(0.1875em) 0.3125em;
+}
+.window > * {
+  position: relative;
 }
 .window > h2:first-child {
   position: absolute;
@@ -220,25 +249,27 @@ input[type=password] {
 }
 .window.form {
   color: #000000;
+  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
   position: relative;
-  background-color: #aaaaaa;
-  box-shadow: 2ch 1em 0 0 rgba(0, 0, 0, 0.7);
   padding: 1em 1ch;
-}
-.window.form > * {
-  position: relative;
+  background-color: #aaaaaa;
 }
 .window.form::before {
   content: "";
   position: absolute;
-  left: 0.37ch;
-  right: 0.37ch;
-  top: 0.4em;
-  bottom: 0.4em;
   border-color: #ffffff;
+}
+.window.form::before {
+  left: calc(0.34375ch);
+  right: calc(0.34375ch);
+  top: calc(0.375em);
+  bottom: calc(0.4375em);
   border-style: double;
-  border-width: 3px 5px;
+  border-width: calc(0.1875em) 0.3125em;
+}
+.window.form > * {
+  position: relative;
 }
 .window.form > h2:first-child {
   position: absolute;
