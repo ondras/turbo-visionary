@@ -44,3 +44,4 @@ White	  |255, 255, 255 | #ffffff
   - Comments: dark gray   #555555
   - Strings: light green  #55ff55
   - Numbers: light cyan   #55ffff
+  - Selection background: light gray #aaaaaa
