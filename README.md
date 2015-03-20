@@ -36,5 +36,11 @@ White	  |255, 255, 255 | #ffffff
   - Font explainer: http://laemeur.sdf.org/fonts/
   - TTF with incorrectly mapped bullet and pointers: http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf
 
-## UI examples
+## Syntax highligt
 
+  - Background: dark blue
+  - Foreground: yellow
+  - Keywords: white
+  - Comments: dark gray
+  - Strings: light green
+  - Numbers: light cyan
