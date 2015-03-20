@@ -20,7 +20,7 @@ nav ul li {
   text-indent: 0;
 }
 nav ul li::before {
-  content: "";
+  content: none;
 }
 nav ul li:empty {
   height: 1em;
