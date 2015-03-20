@@ -38,9 +38,9 @@ White	  |255, 255, 255 | #ffffff
 
 ## Syntax highlighting
 
-  - Background: dark blue
-  - Foreground: yellow
-  - Keywords: white
-  - Comments: dark gray
-  - Strings: light green
-  - Numbers: light cyan
+  - Background: dark blue #0000aa
+  - Foreground: yellow    #ffff55
+  - Keywords: white       #ffffff
+  - Comments: dark gray   #555555
+  - Strings: light green  #55ff55
+  - Numbers: light cyan   #55ffff
