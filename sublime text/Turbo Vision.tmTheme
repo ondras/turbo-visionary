@@ -6,15 +6,17 @@
 <!-- code: https://github.com/aziz/tmTheme-Editor -->
 <plist version="1.0">
 <dict>
+	<!--
 	<key>gutterSettings</key>
 	<dict>
 		<key>background</key>
-		<string>#0000aa</string>
+		<string>#ff0000</string>
 		<key>divider</key>
-		<string>#ffff55</string>
+		<string>#ff0000</string>
 		<key>foreground</key>
-		<string>#ffffff</string>
+		<string>#ff0000</string>
 	</dict>
+-->
 	<key>name</key>
 	<string>Turbo Vision</string>
 	<key>semanticClass</key>
@@ -36,6 +38,8 @@
 				<string>#0000aa</string>
 				<key>selection</key>
 				<string>#aaaaaa</string>
+				<key>selectionForeground</key>
+				<string>#0000aa</string>
 			</dict>
 		</dict>
 		<dict>
@@ -75,7 +79,7 @@
 			<key>name</key>
 			<string>Keyword</string>
 			<key>scope</key>
-			<string>keyword</string>
+			<string>keyword, entity.name.tag, storage</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
